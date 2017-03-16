@@ -18,7 +18,7 @@ let princiSchema = new mongoose.Schema({
     }
 });
 
-princiSchema.pre('save', ()=> {
+princiSchema.pre('save', function(next) {
      let princi = this;
 
      if(!princi.isModified('password')) 
